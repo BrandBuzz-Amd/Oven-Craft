@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover premium brick ovens, wood-fired pizza ovens, and outdoor kitchen solutions. Quality craftsmanship for residential and commercial use.">
+    <meta name="keywords" content="brick oven, wood fire pizza oven, neapolitan oven, the brick oven, wood brick oven pizza, brick oven for pizza, pizza in brick oven, brick oven pizza bangalore, brick oven pizza near me, 900 degree brick oven pizza, pizza brick oven near me, brick oven restaurant, wood fire pizza oven at home, brick oven near me, pizza near me brick oven, brick oven menu, brick oven pizza indiranagar, brick oven bangalore, the brick oven reviews, brick oven pizza whitefield, wood-fired oven, pizza oven, outdoor kitchen, commercial oven, residential oven, brick oven manufacturer, wood-fired pizza oven, gas-fired oven, hybrid oven, outdoor cooking, pizza cooking, wood-fired cooking, brick oven cooking, commercial kitchen equipment, residential kitchen appliances, outdoor dining, alfresco dining, pizza restaurant equipment, wood-fired pizza restaurant, wood-fired pizza oven for home, commercial brick oven for restaurants, outdoor kitchen with brick oven, residential wood-fired pizza oven, hybrid oven for commercial use, brick oven for outdoor cooking, pizza oven for backyard, wood-fired oven for pizza restaurant, commercial grade brick oven, residential brick oven for outdoor kitchen, wood-fired pizza oven manufacturers, commercial brick oven suppliers, residential outdoor kitchen designs, pizza oven for home use, hybrid oven for commercial kitchens, brick oven cooking techniques, outdoor dining solutions, pizza restaurant equipment suppliers, wood-fired cooking methods, brick oven maintenance tips">
+    <meta name="author" content="Your Company Name">
+    <title>{{ title }} - Oven Craft</title>
+
+    {% comment %} Open Graph and Twitter Card meta tags for social sharing {% endcomment %}
+    <meta property="og:title" content="{{ og_title|default:title }}">
+    <meta property="og:description" content="{{ og_description|default:'Discover premium brick ovens, wood-fired pizza ovens, and outdoor kitchen solutions. Quality craftsmanship for residential and commercial use.' }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:image" content="{{ og_image|default:request.build_absolute_uri|add:'static/images/logo1.png' }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ twitter_title|default:title }}">
+    <meta name="twitter:description" content="{{ twitter_description|default:'Discover premium brick ovens, wood-fired pizza ovens, and outdoor kitchen solutions. Quality craftsmanship for residential and commercial use.' }}">
+    <meta name="twitter:image" content="{{ twitter_image|default:request.build_absolute_uri|add:'static/images/logo.png' }}">
+
+    {% comment %} Canonical URL to avoid duplicate content {% endcomment %}
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+    {% load static %}
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="64x64" href="{% static 'images/logo.png' %}">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/floating-buttons.css' %}" rel="stylesheet">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Floating Action Buttons -->
+    <a href="tel:+919265081926" class="floating-button call-button" title="Call Us">
+        <i class="bi bi-telephone-fill"></i>
+    </a>
+    <a href="https://wa.me/919265081926" class="floating-button whatsapp-button" title="Chat on WhatsApp" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+    
+    {% include 'components/preloader.html' %}
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
+        <div class="container">
+            <a class="navbar-brand brand-logo" href="/">
+    <img src="{% static 'images/logo.png' %}" alt="Oven Craft Logo" class="logo-image">
+                
+            </a>
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.url.path == '/' %}active{% endif %}" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.url.path == '/about' %}active{% endif %}" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.url.path == '/products' %}active{% endif %}" href="/products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.url.path == '/gallery' %}active{% endif %}" href="/gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.url.path == '/blogs' %}active{% endif %}" href="/blogs">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.url.path == '/faq' %}active{% endif %}" href="/faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.url.path == '/contact' %}active{% endif %}" href="/contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="custom-footer py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand mb-4">
+                         {% load static %}
+                         <img src="{% static 'images/logo.png' %}" alt="Oven Craft Logo" class="footer-logo-image">
+                    </div>
+                    <p class="footer-description">Your trusted partner for quality woodfire ovens. We're dedicated to providing excellence in design, craftsmanship, and performance.</p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/products">Products</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-heading">Resources</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="/blogs">Blog</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/gallery">Gallery</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="footer-heading">Connect With Us</h5>
+                    <div class="social-icons d-flex gap-3 fs-4 mb-3">
+                        <a href="https://www.facebook.com/share/15HbwyVHqw/" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="https://wa.me/919265081926" class="social-icon"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/ovencraft_01?igsh=MTg2d2Y0Y2c2eHdweA==" class="social-icon"><i class="bi bi-instagram"></i></a>
+                    </div>
+                    <div class="contact-info">
+                        <p><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:ovencraft01@gmail.com">ovencraft01@gmail.com</a></p>
+                        <p><i class="bi bi-telephone-fill me-2"></i><a href="tel:+91 9265081926">+91 9265081926</a></p>
+                        <p><i class="bi bi-telephone-fill me-2"></i><a href="tel:+91 7874659091">+91 7874659091</a></p>
+                        <p><i class="bi bi-geo-fill me-2"></i><a href="https://maps.app.goo.gl/HJ2hwtxtQUa5MHbd6">32, Akshat industrial Park, Naroda GIDC (phase -1), 382330 Ahmedabad, Gujarat, India.</a></p>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="copyright mb-0">© 2025 Oven Craft. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    {% load static %}
+    <script src="{% static 'js/main.js' %}"></script>
+    
+    {% block extra_js %}{% endblock %}
+
+    <style>
+        /* Logo styling */
+        .logo-image {
+            height: 40px;
+            width: 120px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        .footer-logo-image {
+            height: 100px;
+            width: auto;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        .navbar-brand.brand-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Footer contact links styling */
+        .contact-info a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</body>
+</html>
